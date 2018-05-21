@@ -1,9 +1,10 @@
 
 import React from 'react'
 import { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
 import Errors from '../error/errors.component'
-import { me } from '../auth'
+import { me, signout } from '../auth'
 
 import './home.component.css'
 
@@ -41,18 +42,26 @@ class Home extends Component {
         this.clearErrors = this.clearErrors.bind(this)
     }
 
-    componentDidMount() {
-        me()
-            .then(res => this.setState({email: res.data.user}))
+    profile() {
+        return me()
+            .then(res => {
+                if (res.status === 401) {
+                    signout()
+                    this.props.history.push('/')
+                } else {
+                    this.setState({ email: res.data.user})
+                }
+            })
             .catch(err => this.addError(err))
+        }
+
+    componentDidMount() {
+        this.profile()
     }
 
     onClickNav = e => console.log('onClickNav')
 
-    onClickTestProtected = e => 
-        me()
-            .then(res => this.setState({ email: res.data.user}))
-            .catch(err => this.addError(err))
+    onClickTestProtected = e => this.profile() 
    
 
     clearErrors(e) {
@@ -118,4 +127,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default withRouter(Home)

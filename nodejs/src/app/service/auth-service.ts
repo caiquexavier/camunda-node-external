@@ -11,11 +11,7 @@ import { merge, inspect } from '../utils/objects'
 import { User, Session } from '../model/user'
 import { newInvalidParameters, newRequiredParameters } from '../utils/errors'
 
-const verifyToken = token => {
-    const result = jwt.verify(token)
-    logger.debug(`Token verify result=${inspect(result)}`)
-    return Promise.resolve(result)
-}
+const verifyToken = token => jwt.verify(token)
   
 const newUser = (name: string, email: string, password: string, photoUrl: string = null, 
         providerId: string = null): Promise<User> => new Promise((resolve, reject) => {

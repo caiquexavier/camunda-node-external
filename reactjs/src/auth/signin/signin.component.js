@@ -66,7 +66,7 @@ class Signin extends Component {
                     </h1>
                     <h2>
                         Sua melhor<br />experiência<br />em <strong> Gestão de<br />
-                        Salão de Beleza
+                        Sistemas
                     </strong>
                     </h2>
                 </div>

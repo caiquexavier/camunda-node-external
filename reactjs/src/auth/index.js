@@ -44,9 +44,5 @@ const authenticated = () =>
 
 const me = () => 
     get('/auth/me', getToken())
-        .then(res => {
-            if (res.status === 401) return { data: signout() }
-            else return res
-        })
 
 export { signin, signout, authenticated, me }
