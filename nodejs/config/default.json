@@ -1,0 +1,20 @@
+{
+    "server": {
+        "name": "camunda-node-external",
+        "version": "1.0.0",
+        "running": true
+    },
+    "jwt": {
+        "header": "Authorization",
+        "secret": "camunda-node-external-changeme-please"
+    },
+    "logger": {
+        "file": {
+            "path": "./camunda-node-external",
+            "level": "debug"
+        },
+        "console": {
+            "level": "debug"
+        }
+    }
+}

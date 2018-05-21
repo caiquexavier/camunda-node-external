@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "test@test.com",
+    "_rev": "3-ca5172549420dfe87deccb6b9a4d9455",
+    "name": "test",
+    "password": "$2a$10$u3eo.dguLlC/34KoZM/aQeSccdVMS9STWZZfZBC1BXjR/oUC57.iK",
+    "phoneNumber": "",
+    "providerId": "system",
+    "firebaseId": "",
+    "photoUrl": "http://www.gravatar.com/avatar/?d=mysteryman&s=50",
+    "session": {
+      "score": 0,
+      "token": null,
+      "logged": false
+    }
+  }
+]

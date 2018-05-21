@@ -1,0 +1,18 @@
+{"level":"debug","message":"Server env: { profile: 'test',\n  user: 'paulosales',\n  lang: 'en_US.UTF-8',\n  port: '3999',\n  ip: '172.16.32.204' }","timestamp":"2018-04-25T22:14:18.475Z"}
+{"level":"info","message":"Server listen on 172.16.32.204:3999 start up at 2018-04-25T22:14:18.970Z","timestamp":"2018-04-25T22:14:18.972Z"}
+{"level":"debug","message":"Auth filter to path=/support/ping","timestamp":"2018-04-25T22:14:18.999Z"}
+{"level":"debug","message":"Auth filter is unless to req.path=/support/ping","timestamp":"2018-04-25T22:14:19.000Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [25/Apr/2018:22:14:19 +0000] \"GET /support/ping HTTP/1.1\" 200 17 \"-\" \"node-superagent/2.3.0\"\n","timestamp":"2018-04-25T22:14:19.007Z"}
+{"level":"debug","message":"Auth filter to path=/support/echo/test","timestamp":"2018-04-25T22:14:19.018Z"}
+{"level":"debug","message":"Auth filter is unless to req.path=/support/echo/test","timestamp":"2018-04-25T22:14:19.018Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [25/Apr/2018:22:14:19 +0000] \"GET /support/echo/test HTTP/1.1\" 200 17 \"-\" \"node-superagent/2.3.0\"\n","timestamp":"2018-04-25T22:14:19.020Z"}
+{"level":"debug","message":"Server env: { profile: 'test',\n  user: 'paulosales',\n  lang: 'en_US.UTF-8',\n  port: '3999',\n  ip: '172.16.32.204' }","timestamp":"2018-04-25T22:21:41.551Z"}
+{"level":"info","message":"Server listen on 172.16.32.204:3999 start up at 2018-04-25T22:21:41.608Z","timestamp":"2018-04-25T22:21:41.610Z"}
+{"level":"debug","message":"Auth filter to path=/support/ping","timestamp":"2018-04-25T22:21:41.636Z"}
+{"level":"debug","message":"Auth filter is unless to req.path=/support/ping","timestamp":"2018-04-25T22:21:41.637Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [25/Apr/2018:22:21:41 +0000] \"GET /support/ping HTTP/1.1\" 200 17 \"-\" \"node-superagent/2.3.0\"\n","timestamp":"2018-04-25T22:21:41.643Z"}
+{"level":"debug","message":"Auth filter to path=/support/echo/test","timestamp":"2018-04-25T22:21:41.657Z"}
+{"level":"debug","message":"Auth filter is unless to req.path=/support/echo/test","timestamp":"2018-04-25T22:21:41.657Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [25/Apr/2018:22:21:41 +0000] \"GET /support/echo/test HTTP/1.1\" 200 17 \"-\" \"node-superagent/2.3.0\"\n","timestamp":"2018-04-25T22:21:41.658Z"}
+{"level":"debug","message":"Server env: { profile: 'development',\n  user: 'paulosales',\n  lang: 'en_US.UTF-8',\n  port: '4000',\n  ip: '172.16.32.204' }","timestamp":"2018-04-25T22:21:42.718Z"}
+{"level":"info","message":"Server listen on 172.16.32.204:4000 start up at 2018-04-25T22:21:42.730Z","timestamp":"2018-04-25T22:21:42.731Z"}
