@@ -95,8 +95,9 @@ const newUnauthorized = err =>
 
 const newServerError = err => new ServerError(`Internal Server Error=${inspect(err)}`)
 
-const sendHttpResponse = (err: Errors, res, next) => {
-    res.status(err.code).json(err)
+const sendHttpResponse = (err, res, next) => {
+    console.log('>>>>>>>>> sendHttpResponse err', err)
+    res.status(500).json(err)
     next()
 }
 

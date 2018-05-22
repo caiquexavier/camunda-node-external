@@ -4,7 +4,7 @@ import * as Logger from 'camunda-worker-node/lib/logger'
 import * as Backoff from 'camunda-worker-node/lib/backoff'
 import * as Metrics from 'camunda-worker-node/lib/metrics'
 
-import { fetch } from 'camunda-worker-node/lib/engine/fetch'
+import { fetch, FormData } from 'camunda-worker-node/lib/engine/fetch'
 
 import logger from '../log'
 import option from '../utils/option'
@@ -31,13 +31,13 @@ const traitResponse = response =>
 
 const getUrl = uri => CAMUNDA_URL + uri
 
-const postOpts = (uri, body = null) => {
+const post = (uri, body = null) => {
     return fetch(getUrl(uri), {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: body ? JSON.stringify(body) : ''
+        body: body ? JSON.stringify(body) : '' 
     })
     .then(res => {
         logger.debug(`Camunda Fetch [POST] uri=${uri} body=${inspect(body)} response=${inspect(res.status)}`)
@@ -45,7 +45,7 @@ const postOpts = (uri, body = null) => {
     })
 }
 
-const getOpts = (uri, body = null) => {
+const get = (uri, body = null) => {
     return fetch(getUrl(uri), {
         method: 'GET',
         headers: {
@@ -58,7 +58,21 @@ const getOpts = (uri, body = null) => {
     })
 }
 
-export const post = postOpts
-export const get = getOpts
+const deploy = bpmnFile => {
+    const fs = require('fs')
+    const path = require('path')
+    const bpmnPath = path.join(__dirname, bpmnFile)
+    const stream = fs.createReadStream(bpmnPath)
+    const formData = new FormData()
 
-export { worker }
+    formData.append('deployment-name', 'orderProcessDeployment')
+    formData.append('process', stream)
+
+    return fetch(getUrl('/deployment/create'), {
+        method: 'POST',
+        body: formData
+    }).then(res => traitResponse(res))
+}
+
+// public
+export { get, post, worker, deploy }

@@ -1,8 +1,8 @@
 
 import option from '../shared/option'
 
-import { get, post } from '../shared/http'
-import { encode, decode, tokenKeyHashed } from '../shared/crypto'
+import { get, post, getToken } from '../shared/http'
+import { encode, tokenKeyHashed } from '../shared/crypto'
 
 /** private */
 const setToken = tokenHashed =>
@@ -10,11 +10,6 @@ const setToken = tokenHashed =>
 
 const delToken = () => 
     localStorage.removeItem(tokenKeyHashed)
-
-const getToken = () =>
-    option(localStorage.getItem(tokenKeyHashed))
-        .map(tokenHashed => decode(tokenHashed))
-        .orElse(null)
 
 const authenticate = res =>
     option(res)

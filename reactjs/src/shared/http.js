@@ -1,6 +1,10 @@
 
 import * as axios from 'axios'
 
+import option from './option'
+
+import { decode, tokenKeyHashed } from './crypto'
+
 const TOKEN_HEADER = 'Authorization'
 const NetworkError = Error
 
@@ -52,18 +56,25 @@ axios.defaults.baseURL =
     + 4000
 
 /* public */            
-const get = (uri, token = null) => {
+const get = (uri) => {
+    const token = getToken()
     if (token) setHeader(TOKEN_HEADER, `Bearer ${token}`)
     return axios.get(uri)
         .then(res => padronize(res, uri))
         .catch(err => error(err, uri))
 }
 
-const post = (uri, body = null, token = null) => {
+const post = (uri, body = null) => {
+    const token = getToken()
     if (token) setHeader(TOKEN_HEADER, `Bearer ${token}`)
     return axios.post(uri, body)
         .then(res => padronize(res, uri, body))
         .catch(err => throwError(error(err, uri, body)))
 }
 
-export { get, post }
+const getToken = () =>
+    option(localStorage.getItem(tokenKeyHashed))
+        .map(tokenHashed => decode(tokenHashed))
+        .orElse(null)
+
+export { get, post, getToken }

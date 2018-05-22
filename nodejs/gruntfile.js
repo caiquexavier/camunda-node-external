@@ -40,6 +40,12 @@ module.exports = function (grunt) {
       cwd: path.join('<%= paths.config %>', '/'),
       src: '**/*.json',
       dest: path.join('<%= paths.dist %>', '/config', '/')
+    }, 
+    bpmn: {
+      expand: true,
+      cwd: path.join('<%= paths.config %>', '/'),
+      src: '**/*.bpmn',
+      dest: path.join('<%= paths.dist %>', '/config', '/')
     }
   }
 

@@ -18,14 +18,14 @@ const register = (req, res, next) => {
 
     logger.info('/register', inspect(req.body))
     authService.newUser(name, email, password)
-    .then(user => res.json(user))
-    .catch(err =>  sendHttpResponse(err, res, next))
+        .then(user => res.json(user))
+        .catch(err =>  sendHttpResponse(err, res, next))
 }
 
 const me = (req, res, next) => {
     decodedToken(req)
-    .then(decoded =>  res.json(decoded))
-    .catch(err => sendHttpResponse(err, res, next))
+        .then(decoded =>  res.json(decoded))
+        .catch(err => sendHttpResponse(err, res, next))
 }
 
 const logout = (req, res, next) => {
