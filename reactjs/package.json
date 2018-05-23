@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
     "axios": "^0.18.0",
     "base-64": "^0.1.0",
     "bloomer": "^0.6.3",
