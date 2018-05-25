@@ -57,7 +57,7 @@ class Home extends Component {
                 }
             })
             .catch(err => this.addError(err))
-    
+
     componentDidMount() {
         this.profile()
     }

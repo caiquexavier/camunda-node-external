@@ -4,15 +4,17 @@ import React from 'react'
 import { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 // Material-UI
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
+import {
+  Grid,
+  Card,
+  CardHeader,
+  CardActions,
+  CardContent,
+  Avatar,
+  Button,
+  TextField,
+  FormControl
+} from '@material-ui/core/';
 // Icons
 import LockIcon from '@material-ui/icons/Lock';
 import SendIcon from '@material-ui/icons/Send';
